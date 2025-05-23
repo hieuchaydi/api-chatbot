@@ -1,0 +1,12 @@
+project/
+├── app.py
+├── chatbot_engine.py
+├── stt.py
+├── templates/
+│   └── index.html
+└── static/
+    └── style.css
+
+
+    venv\Scripts\activate
+    python -m venv venv

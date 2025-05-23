@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>English Chatbot</title>
+</head>
+<body>
+    <h2>💬 English Learning Chatbot</h2>
+    <input type="text" id="message" placeholder="Type your sentence..." />
+    <button onclick="sendMessage()">Send</button>
+    <p id="reply"></p>
+
+    <script>
+        function sendMessage() {
+            const msg = document.getElementById("message").value;
+            fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: msg })
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("reply").innerText = "Bot: " + data.reply;
+            });
+        }
+    </script>
+</body>
+</html>
+#2xSKESnAIuqksWKle7MRHs2tZX1_4cv6msCRThJdk42KqC8k
